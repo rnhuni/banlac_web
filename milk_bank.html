@@ -31,7 +31,7 @@
         </nav>
         
         <!-- Page Content-->
-        <div class="container px-4 px-lg-5 mt-10 mb-5">
+        <div class="container px-4 px-lg-5 mt-8 mb-5">
             <!-- Heading Row-->
             <div class="card text-center">
                 <div class="card-header bg-secondary-30">
@@ -48,45 +48,44 @@
                     <div id="body_sumarizada">
                         <canvas id="miGraficaDeBarras"></canvas>
                     </div>
-                    <div id="body_dia" class="d-none">
-                       
-                            <table class="table table-bordered custom-size-16">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row" class="align-middle py-4 custom-width-20"> 
-                                            <div>Martes</div>
-                                            <div class="custom-size-32">2</div>
-                                            <div>enero</div>
-                                        </th>
-                                        <td class="text-justify py-4 custom-width-60">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum velit ut sodales blandit. Nulla pulvinar
-                                            egestas elit sit amet hendrerit. Donec mattis ante lorem, ut consequat tortor iaculis non. Maecenas ut orci iaculis,
-                                            finibus tellus eu, placerat magna. Donec mollis risus quis tellus egestas varius. Sed vestibulum dui sed placerat
-                                            molestie. Donec venenatis blandit metus, sit amet pulvinar ligula eleifend condimentum.
-                                        </td>
-                                        <td class="align-middle py-4 custom-width-20">
-                                            <div>9:51 p.m.</div>
-                                            <div>2.5 oz</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="align-middle py-4">
-                                            <div>Jueves</div>
-                                            <div class="custom-size-32">4</div>
-                                            <div>enero</div>
-                                        </th>
-                                        <td class="text-justify py-4">
-                                            Donec mattis ante lorem, ut consequat tortor iaculis non. Maecenas ut orci iaculis, finibus tellus eu, placerat magna.
-                                            Donec mollis risus quis tellus egestas varius. Sed vestibulum dui sed placerat molestie. Donec venenatis blandit metus,
-                                            sit amet pulvinar ligula eleifend condimentum.
-                                        </td>
-                                        <td class="align-middle py-4">
-                                            <div>8:30 a.m.</div>
-                                            <div>1 oz</div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div id="body_dia" class="d-none">                       
+                        <table class="table table-bordered custom-size-16">
+                            <tbody>
+                                <tr>
+                                    <td scope="row" class="align-middle py-4 custom-width-20 text-tertiary-30"> 
+                                        <div>Martes</div>
+                                        <div class="custom-size-32">2</div>
+                                        <div>enero</div>
+                                    </td>
+                                    <td class="text-justify py-4 custom-width-60 text-tertiary-30">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum velit ut sodales blandit. Nulla pulvinar
+                                        egestas elit sit amet hendrerit. Donec mattis ante lorem, ut consequat tortor iaculis non. Maecenas ut orci iaculis,
+                                        finibus tellus eu, placerat magna. Donec mollis risus quis tellus egestas varius. Sed vestibulum dui sed placerat
+                                        molestie. Donec venenatis blandit metus, sit amet pulvinar ligula eleifend condimentum.
+                                    </td>
+                                    <td class="align-middle py-4 custom-width-20 text-tertiary-30">
+                                        <div>9:51 p.m.</div>
+                                        <div>2.5 oz</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row" class="align-middle py-4">
+                                        <div>Jueves</div>
+                                        <div class="custom-size-32">4</div>
+                                        <div>enero</div>
+                                    </td>
+                                    <td class="text-justify py-4">
+                                        Donec mattis ante lorem, ut consequat tortor iaculis non. Maecenas ut orci iaculis, finibus tellus eu, placerat magna.
+                                        Donec mollis risus quis tellus egestas varius. Sed vestibulum dui sed placerat molestie. Donec venenatis blandit metus,
+                                        sit amet pulvinar ligula eleifend condimentum.
+                                    </td>
+                                    <td class="align-middle py-4">
+                                        <div>8:30 a.m.</div>
+                                        <div>1 oz</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>                    
                 </div>
             </div>
@@ -103,7 +102,7 @@
             var miGraficaDeBarras = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'],
+                    labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
                     datasets: [{
                         data: [5, 2.3, 3.7, 2.1, 5.2, 3, 3.1],
                         backgroundColor: 'rgba(242, 216, 215, 1)',
@@ -127,12 +126,22 @@
                         x: {
                             grid: {
                                 display: false
+                            },
+                            ticks: {
+                                font: {
+                                    family: 'Roboto', // Aplica la fuente Roboto a los ticks del eje X
+                                    size: 16
+                                }
                             }
                         },
                         y: {
                             beginAtZero: true,
                             ticks: {
-                                stepSize: 1
+                                stepSize: 1,
+                                font: {
+                                    family: 'Roboto', // Aplica la fuente Roboto a los ticks del eje X
+                                    size: 16
+                                }
                             }
                         }
                     }
