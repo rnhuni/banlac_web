@@ -22,7 +22,7 @@
             </div>
         </nav>
         
-        <form class="login-form">
+        <form id="login-form" class="login-form">
             <div class="mb-3">
                 <label for="emailInput" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control form-input" id="emailInput">
@@ -31,14 +31,17 @@
                 <label for="passwordInput" class="form-label">Contraseña</label>
                 <input type="password" class="form-control form-input" id="passwordInput">
             </div>
-            <a href="profile.html" class="login-btn">Iniciar sesión</a>
+            <button type="submit" class="submit-btn">Iniciar sesión</a>
         </form>
-        <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- Incluye Chart.js -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         
+        <script>
+            document.getElementById('login-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                window.location.href = 'profile.html';
+            });
+        </script>
     </body>
 </html>
